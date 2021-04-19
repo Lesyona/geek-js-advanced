@@ -1,0 +1,40 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Verdana, sans-serif;
+}
+
+.container {
+    max-width: 990px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background: peachpuff;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    padding: 0 20px;
+}
+
+.products {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-between;
+}
+
+.product-item {
+    background: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    padding: 20px;
+    flex-basis: 32%;
+    margin: 0 0 20px;
+}

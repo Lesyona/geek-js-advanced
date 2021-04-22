@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Гамбургер</title>
+</head>
+<body>
+
+<script>
+    class Hamburger {
+        constructor(size, filling, sauce, mayonnaise) {
+            this.size = [
+                {
+                    type: 'small',
+                    price: 50,
+                    calories: 20
+                },
+                {
+                    type: 'large',
+                    price: 100,
+                    calories: 40
+                },
+            ];
+
+            this.filling = [
+                {
+                    type: 'cheese',
+                    price: 10,
+                    calories: 20
+                },
+                {
+                    type: 'salad',
+                    price: 20,
+                    calories: 5
+                },
+                {
+                    type: 'fries',
+                    price: 15,
+                    calories: 10
+                },
+            ]
+
+            this.sauce = {
+                price: 15,
+                calories: 0
+            }
+
+            this.mayonnaise = {
+                price: 20,
+                calories: 5
+            }
+
+            this.hamburgerCost = 0;
+            this.hamburgerCalories = 0;
+
+            this.countHamburger(size, filling, sauce, mayonnaise);
+        }
+
+        countHamburger(size, filling, sauce = 'no', mayonnaise = 'no') {
+            let sizeNeeded = this.size.filter(item => {
+                return item.type === size;
+            });
+
+            let fillingNeeded = this.filling.filter(item => {
+                return item.type === filling;
+            });
+
+            this.hamburgerCost += sizeNeeded[0].price;
+            this.hamburgerCalories += sizeNeeded[0].calories;
+
+            this.hamburgerCost += fillingNeeded[0].price;
+            this.hamburgerCalories += fillingNeeded[0].calories;
+
+            if (sauce === 'yes') {
+                this.hamburgerCost += this.sauce.price;
+                this.hamburgerCalories += this.sauce.calories;
+            }
+
+            if (mayonnaise === 'yes') {
+                this.hamburgerCost += this.mayonnaise.price;
+                this.hamburgerCalories += this.mayonnaise.calories;
+            }
+        }
+    }
+
+    let hamburger = new Hamburger('large', 'salad', 'yes', 'no');
+    document.body.innerHTML = `Цена: ${hamburger.hamburgerCost}<br> Калорийность: ${hamburger.hamburgerCalories}`;
+</script>
+</body>
+</html>

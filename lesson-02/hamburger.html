@@ -56,7 +56,7 @@
             this.countHamburger(size, filling, sauce, mayonnaise);
         }
 
-        countHamburger(size, filling, sauce = 'no', mayonnaise = 'no') {
+        countHamburger(size, filling, sauce = false, mayonnaise = false) {
             let sizeNeeded = this.size.filter(item => {
                 return item.type === size;
             });
@@ -71,19 +71,19 @@
             this.hamburgerCost += fillingNeeded[0].price;
             this.hamburgerCalories += fillingNeeded[0].calories;
 
-            if (sauce === 'yes') {
+            if (sauce === true) {
                 this.hamburgerCost += this.sauce.price;
                 this.hamburgerCalories += this.sauce.calories;
             }
 
-            if (mayonnaise === 'yes') {
+            if (mayonnaise === true) {
                 this.hamburgerCost += this.mayonnaise.price;
                 this.hamburgerCalories += this.mayonnaise.calories;
             }
         }
     }
 
-    let hamburger = new Hamburger('large', 'salad', 'yes', 'no');
+    let hamburger = new Hamburger('large', 'salad', true, false);
     document.body.innerHTML = `Цена: ${hamburger.hamburgerCost}<br> Калорийность: ${hamburger.hamburgerCalories}`;
 </script>
 </body>

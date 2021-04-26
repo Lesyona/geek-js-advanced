@@ -122,7 +122,7 @@ class Cart {
    */
   removeCartItem(product) {
     let productIndex = this._cartGoods.indexOf(product);
-    product.splice(productIndex, 1);
+    this._cartGoods.splice(productIndex, 1);
 
     fetch(`${API}/deleteFromBasket.json`)
       .then(result => result.json())

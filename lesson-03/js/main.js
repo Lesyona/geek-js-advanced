@@ -88,7 +88,7 @@ class Cart {
 
     this._getCartGoods()
       .then((data) => {
-        this._cartGoods = data;
+        this._cartGoods = data.contents;
       });
   }
 

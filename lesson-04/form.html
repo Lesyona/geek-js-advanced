@@ -108,7 +108,7 @@
             name.insertAdjacentHTML('afterend', '<div class="form-error">Имя должно содержать только буквы</div>')
         }
 
-        let phoneValid = /\+7\(\d\d\d\)\d\d\d-\d\d\d\d/.test(phoneValue);
+        let phoneValid = /\+7\(\d{3}\)\d{3}-\d{4}/.test(phoneValue);
         if (!phoneValid && !phone.classList.contains('error')) {
             phone.classList.add('error');
             phone.insertAdjacentHTML('afterend', '<div class="form-error">Телефон должен иметь вид +7(ХХХ)ХХХ-ХХХХ</div>')

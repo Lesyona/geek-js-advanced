@@ -30,7 +30,7 @@
     'use strict';
 
     let text = document.querySelector('.text').innerHTML;
-    text = text.replace(/\B'[\B\b]?/g, '\"');
+    text = text.replace(/\B'|'\B/g, '\"');
     document.querySelector('.text').innerHTML = text;
 </script>
 </body>

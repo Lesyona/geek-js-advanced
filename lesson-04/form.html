@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Форма обратной связи</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font: 16px Verdana, sans-serif;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-input {
+            border-radius: 15px;
+            border: 2px solid grey;
+            font: 16px Verdana, sans-serif;
+            color: black;
+            padding: 10px 20px;
+            margin-top: 5px;
+            outline: none;
+            width: 300px;
+        }
+
+        .form-input.error {
+            border-color: red;
+        }
+
+        .send-form {
+            background: #440099;
+            border-radius: 25px;
+            padding: 15px;
+            border: 0;
+            color: #fff;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .form-error {
+            color: red;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+
+<form action="/">
+    <div class="form-group">
+        <label for="name">* Имя</label><br>
+        <input class="form-input" type="text" name="name" id="name">
+    </div>
+
+    <div class="form-group">
+        <label for="phone">* Телефон</label><br>
+        <input class="form-input" type="text" name="phone" id="phone">
+    </div>
+
+    <div class="form-group">
+        <label for="email">* E-mail</label><br>
+        <input class="form-input" type="email" name="email" id="email">
+    </div>
+
+    <div class="form-group">
+        <label for="msg">Текст</label><br>
+        <textarea class="form-input" name="msg" id="msg" cols="30" rows="10"></textarea>
+    </div>
+
+    <button class="send-form" type="submit">Отправить</button>
+
+    <p>
+        <small>
+            * - поля, обязательные для заполнения
+        </small>
+    </p>
+</form>
+
+<script>
+    'use strict';
+
+    const form = document.querySelector('form');
+    form.addEventListener('submit', formValidate);
+
+    function formValidate(event) {
+        event.preventDefault();
+
+        let errors = document.querySelectorAll('.error');
+        errors.forEach(item => {
+            item.classList.remove('error');
+            item.nextElementSibling.remove();
+        });
+
+        let name = document.getElementById('name');
+        let phone = document.getElementById('phone');
+        let email = document.getElementById('email');
+
+        let nameValue = name.value;
+        let phoneValue = phone.value;
+        let emailValue = email.value;
+
+        let nameValid = /^[a-zA-Zа-яА-ЯёЁ]+$/g.test(nameValue);
+        if (!nameValid && !name.classList.contains('error')) {
+            name.classList.add('error');
+            name.insertAdjacentHTML('afterend', '<div class="form-error">Имя должно содержать только буквы</div>')
+        }
+
+        let phoneValid = /\+7\(\d{3}\)\d{3}-\d{4}/.test(phoneValue);
+        if (!phoneValid && !phone.classList.contains('error')) {
+            phone.classList.add('error');
+            phone.insertAdjacentHTML('afterend', '<div class="form-error">Телефон должен иметь вид +7(ХХХ)ХХХ-ХХХХ</div>')
+        }
+
+        let emailValid = /[\w\.-]+@\w+\.\w+/.test(emailValue);
+        if (!emailValid && !email.classList.contains('error')) {
+            email.classList.add('error');
+            email.insertAdjacentHTML('afterend', '<div class="form-error">Некорректный эмейл</div>')
+        }
+    }
+</script>
+</body>
+</html>

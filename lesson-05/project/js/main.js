@@ -11,7 +11,6 @@ const app = new Vue({
     searchLine: '',
     filtered: [],
     isVisibleCart: false,
-    cartRendered: '',
   },
   methods: {
     getJson(url){
@@ -29,40 +28,9 @@ const app = new Vue({
       const filterValue = new RegExp(this.searchLine, 'i');
 
       this.filtered = this.products.filter(product => filterValue.test(product.product_name));
-      this.products.forEach(product => {
-        let productItem = document.querySelector(`.product-item[data-id="${product.id_product}"]`);
-
-        if(!this.filtered.includes(product)) {
-          productItem.classList.add('invisible');
-        } else {
-          productItem.classList.remove('invisible');
-        }
-      });
     },
     toggleCart() {
       this.isVisibleCart = !this.isVisibleCart;
-      if(this.isVisibleCart) {
-        setTimeout(() => {
-          let cartBlock = document.querySelector('.cart-block');
-          cartBlock.insertAdjacentHTML('afterbegin', this.cartRendered);
-        }, 0);
-      }
-    },
-    renderCartItem(product){
-      return `<div class="cart-item" data-id="${product.id_product}">
-            <div class="product-bio">
-            <img src="https://picsum.photos/50/100?random=1" alt="Some image">
-            <div class="product-desc">
-            <p class="product-title">${product.product_name}</p>
-            <p class="product-quantity">Количество: ${product.quantity}</p>
-        <p class="product-single-price">${product.price} за ед.</p>
-        </div>
-        </div>
-        <div class="right-block">
-            <p class="product-price">${product.quantity*product.price} ₽</p>
-            <button class="del-btn" data-id="${product.id_product}">&times;</button>
-        </div>
-        </div>`
     },
   },
   created() {
@@ -70,13 +38,13 @@ const app = new Vue({
       .then(data => {
         for(let el of data){
           this.products.push(el);
+          this.filtered.push(el);
         }
       });
     this.getJson(`${API + this.cartUrl}`)
       .then(data => {
         for(let el of data.contents){
           this.cartProducts.push(el);
-          this.cartRendered += this.renderCartItem(el);
         }
       });
   },

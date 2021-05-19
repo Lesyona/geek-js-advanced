@@ -1,0 +1,151 @@
+.registration-section {
+    display: flex;
+    flex-flow: wrap;
+    padding-top: 40px;
+    padding-bottom: 95px;
+
+    @media (min-width: 1024px) {
+        flex-flow: nowrap;
+    }
+}
+
+.reg-form {
+    font-weight: 300;
+
+    @media (min-width: 1024px) {
+        min-width: 360px;
+        width: 48%;
+        margin-right: 10%;
+    }
+
+    .form-block-title {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    .pswd-note {
+        color: #B1B1B1;
+        font-size: 13px;
+        margin-bottom: 40px;
+    }
+
+    .cart-button {
+        font-weight: 400;
+        color: var(--white-color);
+        background-color: var(--pink-color);
+        padding-right: 29px;
+        padding-left: 29px;
+
+       svg {
+           margin-left: 20px;
+            fill: var(--white-color);
+       }
+
+       &:hover {
+            background-color: var(--white-color);
+            color: var(--pink-color);
+            border-color: var(--pink-color);
+
+            svg {
+                fill: var(--pink-color);
+            }
+       }
+    }
+}
+
+.radio-inputs-row {
+    display: flex;
+    margin: 33px 0 35px;
+
+    .radio-wrap {
+        display: flex;
+        margin-right: 20px;
+    }
+}
+
+.form-input-wrap label {
+    color: var(--grey-color);
+}
+
+.form-input-wrap input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: #fff;
+    border: 1px solid #A4A4A4;
+    padding: 8px;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    outline: none;
+    margin-right: 9px;
+
+    &:active,
+    &:checked:active {
+        box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+    }
+
+    &:checked {
+        border: 1px solid var(--grey-color);
+        color: var(--grey-color);
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--grey-color);
+        }
+    }
+}
+
+.reg-info {
+    flex-grow: 1;
+    font-size: 16px;
+    font-weight: 300;
+    margin-top: 40px;
+
+    @media (min-width: 1024px) {
+        font-size: 24px;
+        margin-top: 0;
+    }
+
+    &__title {
+        font-size: 16px;
+        text-transform: uppercase;
+        margin-bottom: 32px;
+
+        @media (min-width: 1024px) {
+            font-size: 24px;
+            margin-bottom: 22px;
+        }
+    }
+
+    p {
+        margin-bottom: 20px;
+    }
+
+    .loyalty-perks {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+            margin-bottom: 15px;
+            padding-left: 44px;
+            position: relative;
+
+            &::before {
+                position: absolute;
+                left: 0;
+                top: 3px;
+                font-family: "Font Awesome 5 Pro";
+                font-weight: 300;
+                content: '\f00c';
+            }
+        }
+    }
+}

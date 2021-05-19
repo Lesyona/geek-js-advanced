@@ -2,20 +2,18 @@ Vue.component('products', {
   data(){
     return {
       imgCatalog: 'https://picsum.photos/200/150?random=1',
-      catalogUrl: '/catalogData.json',
       products: [],
       filtered: [],
     }
   },
   methods: {
     filterGoods(searchLine) {
-      console.log(searchLine);
       const filterValue = new RegExp(searchLine, 'i');
       this.filtered = this.products.filter(product => filterValue.test(product.product_name));
     },
   },
   mounted() {
-    this.$parent.getJson(`${API + this.catalogUrl}`)
+    this.$parent.getJson('/api/products')
       .then(data => {
         for(let el of data){
           this.products.push(el);

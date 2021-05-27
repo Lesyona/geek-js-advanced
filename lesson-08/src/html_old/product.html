@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container header-container">
+            <div class="header-left">
+                <a class="header-left__item" href="/">
+                    <img src="images/logo.png" alt="Logo">
+                </a>
+                <a class="header-left__item" href="#">
+                    <img src="images/search_icon.png" alt="">
+                </a>
+            </div>
+            <div class="header-right">
+                <a class="header-right__item burger-menu" href="#">
+                    <img src="images/burger_icon.svg" alt="">
+                </a>
+                <a class="header-right__item" href="registration.html">
+                    <img src="images/user_icon.svg" alt="">
+                </a>
+                <a class="header-right__item cart-item" href="cart.html">
+                    <img src="images/cart_icon.svg" alt="">
+                    <span class="products-number">5</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="menu-overlay">
+        <div class="top-menu--wrap">
+            <div class="menu-close">
+                <i class="fas fa-times"></i>
+            </div>
+            <div class="top-menu__title">MENU</div>
+
+            <ul class="top-menu">
+                <li class="first-level-item">
+                    <a href="#">MAN</a>
+
+                    <ul class="sub-menu">
+                        <li><a href="#">Accessories</a></li>
+                        <li><a href="#">Bags</a></li>
+                        <li><a href="#">Denim</a></li>
+                        <li><a href="#">T-Shirts</a></li>
+                    </ul>
+                </li>
+
+                <li class="first-level-item">
+                    <a href="#">WOMAN</a>
+
+                    <ul class="sub-menu">
+                        <li><a href="#">Accessories</a></li>
+                        <li><a href="#">Jackets & Coats</a></li>
+                        <li><a href="#">Polos</a></li>
+                        <li><a href="#">T-Shirts</a></li>
+                        <li><a href="#">Shirts</a></li>
+                    </ul>
+                </li>
+
+                <li class="first-level-item">
+                    <a href="#">KIDS</a>
+
+                    <ul class="sub-menu">
+                        <li><a href="#">Accessories</a></li>
+                        <li><a href="#">Jackets & Coats</a></li>
+                        <li><a href="#">Polos</a></li>
+                        <li><a href="#">T-Shirts</a></li>
+                        <li><a href="#">Shirts</a></li>
+                        <li><a href="#">Bags</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <section class="heading-section">
+        <div class="heading-container container">
+            <h1>NEW ARRIVALS</h1>
+            <ul class="breadcrumbs">
+                <li><a href="/">HOME</a></li>
+                <li><a href="/">MEN</a></li>
+                <li>NEW ARRIVALS</li>
+            </ul>
+        </div>
+    </section>
+
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="images/slide_img.jpg" class="img-fluid" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="images/slide_img.jpg" class="img-fluid" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="images/slide_img.jpg" class="img-fluid" alt="">
+            </div>
+        </div>
+
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+
+    <section class="container product-description">
+        <div class="product-description__inner">
+            <div class="product-title-category">WOMEN COLLECTION</div>
+            <div class="product-title">MOSCHINO CHEAP AND CHIC</div>
+            <div class="product-text">
+                Compellingly actualize fully researched processes before proactive outsourcing. Progressively syndicate
+                collaborative architectures before cutting-edge services. Completely visualize parallel core
+                competencies
+                rather
+                than exceptional portals.
+            </div>
+            <div class="product-price">$561</div>
+
+            <div class="product-selects">
+                <div class="styled-select">
+                    <select>
+                        <option value="" selected>CHOOSE COLOR</option>
+                        <option value="Option 1">Option 1</option>
+                        <option value="Option 2">Option 2</option>
+                        <option value="Option 3">Option 3</option>
+                    </select>
+                </div>
+
+                <div class="styled-select">
+                    <select>
+                        <option value="" selected>CHOOSE SIZE</option>
+                        <option value="Option 1">Option 1</option>
+                        <option value="Option 2">Option 2</option>
+                        <option value="Option 3">Option 3</option>
+                    </select>
+                </div>
+
+                <div class="styled-select">
+                    <select>
+                        <option value="" selected>QUANTITY</option>
+                        <option value="Option 1">Option 1</option>
+                        <option value="Option 2">Option 2</option>
+                        <option value="Option 3">Option 3</option>
+                    </select>
+                </div>
+            </div>
+
+            <button class="to-cart">
+                <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="26" height="24">
+                    <use xlink:href="images/social-sprite.svg#cart-icon"></use>
+                </svg>
+                Add to Cart
+            </button>
+        </div>
+    </section>
+
+    <section class="container featured-section">
+        <div class="featured-items">
+            <a href="product.html" class="featured-item">
+                <span class="featured-item__image">
+                    <img class="img-fluid" src="images/featured_items_1.jpg" alt="">
+
+                    <span class="add-to-cart">
+                        Add to Cart
+                    </span>
+                </span>
+                <span class="featured-item__info">
+                    <span class="featured-item__title">
+                        ELLERY X M'O CAPSULE
+                    </span>
+                    <span class="featured-item__desc">
+                        Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery
+                        teams
+                        up
+                        with Moda Operandi.
+                    </span>
+                    <span class="featured-item__price">
+                        $52.00
+                    </span>
+                </span>
+            </a>
+
+            <a href="product.html" class="featured-item">
+                <span class="featured-item__image">
+                    <img class="img-fluid" src="images/featured_items_2.jpg" alt="">
+
+                    <span class="add-to-cart">
+                        Add to Cart
+                    </span>
+                </span>
+                <span class="featured-item__info">
+                    <span class="featured-item__title">
+                        ELLERY X M'O CAPSULE
+                    </span>
+                    <span class="featured-item__desc">
+                        Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery
+                        teams
+                        up
+                        with Moda Operandi.
+                    </span>
+                    <span class="featured-item__price">
+                        $52.00
+                    </span>
+                </span>
+            </a>
+
+            <a href="product.html" class="featured-item">
+                <span class="featured-item__image">
+                    <img class="img-fluid" src="images/featured_items_3.jpg" alt="">
+
+                    <span class="add-to-cart">
+                        Add to Cart
+                    </span>
+                </span>
+                <span class="featured-item__info">
+                    <span class="featured-item__title">
+                        ELLERY X M'O CAPSULE
+                    </span>
+                    <span class="featured-item__desc">
+                        Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery
+                        teams
+                        up
+                        with Moda Operandi.
+                    </span>
+                    <span class="featured-item__price">
+                        $52.00
+                    </span>
+                </span>
+            </a>
+        </div>
+    </section>
+
+    <section class="section-subscribe">
+        <div class="subscribe-container container">
+            <div class="subscribe-feedback">
+                <div class="user-image"></div>
+                <div class="user-feeback">
+                    “Vestibulum quis porttitor dui! Quisque viverra nunc mi, <em>a pulvinar purus condimentum</em>“
+                </div>
+            </div>
+            <div class="subscribe-form__wrap">
+                <div class="subscribe-form__title">
+                    <h2>SUBSCRIBE</h2>
+                    FOR OUR NEWLETTER AND PROMOTION
+                </div>
+                <form class="subscribe-form" action="/">
+                    <input class="form-input" type="email" placeholder="Enter Your Email">
+                    <button class="form-button" type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="copy">
+                © 2021 Brand All Rights Reserved.
+            </div>
+            <div class="social-links">
+                <a href="#">
+                    <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="9" height="15">
+                        <use xlink:href="images/social-sprite.svg#fb-icon"></use>
+                    </svg>
+                </a>
+
+                <a href="#">
+                    <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="15">
+                        <use xlink:href="images/social-sprite.svg#inst-icon"></use>
+                    </svg>
+                </a>
+
+                <a href="#">
+                    <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="13" height="15">
+                        <use xlink:href="images/social-sprite.svg#pint-icon"></use>
+                    </svg>
+                </a>
+
+                <a href="#">
+                    <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="17" height="14">
+                        <use xlink:href="images/social-sprite.svg#tw-icon"></use>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

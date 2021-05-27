@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 
-    <link rel="stylesheet" href="styles/styles.css">
+<!--    <link rel="stylesheet" href="styles/styles.css">-->
 </head>
 
 <body>
@@ -400,7 +400,37 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="https://www.uniqlo.com/ru/estore/public/bin/js/jquery-noconflict.3.2.0.min.js"></script>
+    <script src="https://www.uniqlo.com/ru/estore/public/bin/sliders/tiny_slider/tiny-slider.js"></script>
+    <script>
+        (function($) {
+            $(function() {
+
+                slider.pause();
+                slider_menu.pause();
+
+
+
+                $('.weui-tab__panel').on('scroll', onScroll);
+                var sliderTop = $('.menSlider-1').offset().top;
+                var slider2Top = $('.menSlider-2').offset().top + 180;
+
+                console.log('here ' + sliderTop + ' ' + slider2Top);
+
+                function onScroll(e) {
+                    if (e.target.scrollTop >= sliderTop) {
+                        slider.play();
+                    }
+                    if (e.target.scrollTop >= slider2Top) {
+                        $('.products-mob__description').css("background-color", "red");
+                        slider_menu.play();
+                    }
+                }
+
+
+            });
+        })(jQueryNC)
+    </script>
 </body>
 
 </html>

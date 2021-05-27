@@ -9,7 +9,6 @@ Vue.component('products', {
   },
   methods: {
     filterGoods(searchLine) {
-      console.log(searchLine);
       const filterValue = new RegExp(searchLine, 'i');
       this.filtered = this.products.filter(product => filterValue.test(product.product_name));
     },

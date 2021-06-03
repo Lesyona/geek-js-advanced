@@ -1,12 +1,10 @@
 const express = require('express');
 const fs = require('fs');
-//const cartRouter = require('./cartRouter');
 const app = express();
 const path = require('path');
+const history = require('connect-history-api-fallback');
 
 app.use(express.json());
-app.use('/', express.static(path.resolve(__dirname, '../public')));
-//app.use('/api/cart', cartRouter);
 
 /**
  * Используем path дабы избежать проблем с относительными путями до файлов. Делаем их абсолютными.
@@ -101,14 +99,11 @@ app.delete('/api/cart/:id', (request, response) => {
     });
 });
 
+app.use(history());
+app.use('/', express.static(path.resolve(__dirname, '../public')));
 
 const port = process.env.PORT || 5555;
 
 app.listen(port, () => {
     console.log(`Server started at port ${port}`);
 });
-
-// app.get(); // READ
-// app.post(); // CREATE
-// app.put(); // UPDATE
-// app.delete(); // DELETE

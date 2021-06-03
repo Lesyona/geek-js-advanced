@@ -39,6 +39,75 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+@import '../scss/variables.scss';
 
+.footer {
+    height: 143px;
+    background-color: var(--black-color);
+}
+
+.footer-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.copy {
+    order: 1;
+    font-size: 16px;
+    color: var(--white-color);
+}
+
+.social-links {
+    display: flex;
+    order: 0;
+    margin-bottom: 40px;
+
+    a {
+        width: 32px;
+        height: 32px;
+        line-height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--white-color);
+        transition: background-color 0.2s ease-in;
+        margin: 0 3px;
+
+        &:hover {
+            background-color: var(--pink-color);
+
+            svg {
+                fill: #fff;
+            }
+        }
+    }
+
+    svg {
+        fill: black;
+    }
+}
+
+@media (min-width: $tablet-break) {
+    .footer {
+        height: 79px;
+    }
+
+    .footer-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .copy {
+        order: 0;
+    }
+
+    .social-links {
+        order: 1;
+        margin-bottom: 0;
+    }
+}
 </style>

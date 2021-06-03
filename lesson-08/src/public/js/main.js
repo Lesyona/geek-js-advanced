@@ -1,16 +1,18 @@
 import AppHeader from '../components/AppHeader.vue';
 import AppFooter from '../components/AppFooter.vue';
+import Subscribe from '../components/Subscribe.vue';
 import Cart from '../components/Cart.vue';
+import Error from '../components/Error.vue';
 import products from './Product';
 import search from './Search';
 import error from './Error';
-import Home from '../views/Home.vue';
+import HomeView from '../views/HomeView.vue';
 import VueRouter from "vue-router";
 
 const routes = [
   {
     path: '/',
-    component: Home
+    component: HomeView
   },
   {
     path: '/cart',
@@ -33,7 +35,9 @@ const app = {
   components: {
     AppHeader,
     AppFooter,
+    Subscribe,
     Cart,
+    Error,
     products,
     error,
     search,

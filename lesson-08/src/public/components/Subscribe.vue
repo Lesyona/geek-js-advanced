@@ -10,7 +10,7 @@
             <div class="subscribe-form__wrap">
                 <div class="subscribe-form__title">
                     <h2>SUBSCRIBE</h2>
-                    FOR OUR NEWLETTER AND PROMOTION
+                    FOR OUR NEWSLETTER AND PROMOTION
                 </div>
                 <form class="subscribe-form" action="/">
                     <input class="form-input" type="email" placeholder="Enter Your Email">

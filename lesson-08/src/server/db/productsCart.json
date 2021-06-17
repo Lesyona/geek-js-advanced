@@ -1,1 +1,30 @@
-{"amount":46600,"countGoods":2,"contents":[{"quantity":5,"id_product":123,"product_name":"Ноутбук","price":45600},{"quantity":1,"id_product":457,"product_name":"Gamepad","price":3000},{"quantity":1,"id_product":456,"product_name":"Мышка","price":1000},{"quantity":1,"id_product":124,"product_name":"Keyboard","price":1600}]}
+{
+  "amount": 46600,
+  "countGoods": 2,
+  "contents": [
+    {
+      "quantity": 5,
+      "id_product": 124,
+      "product_name": "Куртка кожаная Trussardi",
+      "price": 34800
+    },
+    {
+      "quantity": 1,
+      "id_product": 457,
+      "product_name": "Сумка Roberto Buono",
+      "price": 7780
+    },
+    {
+      "quantity": 1,
+      "id_product": 111,
+      "product_name": "Чулки Prestige 40 DEN Teatro",
+      "price": 498
+    },
+    {
+      "quantity": 1,
+      "id_product": 363,
+      "product_name": "Платье из трикотажа в рубчик H&M",
+      "price": 1199
+    }
+  ]
+}

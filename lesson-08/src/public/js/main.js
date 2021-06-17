@@ -1,12 +1,12 @@
 import AppHeader from '../components/AppHeader.vue';
 import AppFooter from '../components/AppFooter.vue';
 import Subscribe from '../components/Subscribe.vue';
-import Cart from '../components/Cart.vue';
 import Error from '../components/Error.vue';
-import products from './Product';
-import search from './Search';
-import error from './Error';
+
 import HomeView from '../views/HomeView.vue';
+import CatalogView from '../views/CatalogView.vue';
+import CartView from '../views/CartView.vue';
+
 import VueRouter from "vue-router";
 
 const routes = [
@@ -16,11 +16,11 @@ const routes = [
   },
   {
     path: '/cart',
-    component: Cart
+    component: CartView
   },
   {
     path: '/catalog',
-    component: products
+    component: CatalogView
   }
 ]
 
@@ -36,11 +36,7 @@ const app = {
     AppHeader,
     AppFooter,
     Subscribe,
-    Cart,
     Error,
-    products,
-    error,
-    search,
   },
   methods: {
     getJson(url){

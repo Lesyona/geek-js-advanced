@@ -5,29 +5,33 @@
                 <a class="header-left__item" href="/">
                     <img src="images/logo.png" alt="Logo">
                 </a>
-                <a class="header-left__item" href="#">
-                    <img src="images/search_icon.png" alt="">
-                </a>
+                <div class="header-left__item">
+                    <search ref="search"></search>
+                </div>
             </div>
             <div class="header-right">
                 <a class="header-right__item burger-menu" href="#">
                     <img src="images/burger_icon.svg" alt="">
                 </a>
-                <a class="header-right__item" href="registration.html">
+                <a class="header-right__item" href="#">
                     <img src="images/user_icon.svg" alt="">
                 </a>
-                <router-link class="header-right__item cart-item" to="/cart">
-                    <img src="images/cart_icon.svg" alt="">
-                    <span class="products-number">5</span>
-                </router-link>
+                <cart-popup></cart-popup>
             </div>
         </div>
     </header>
 </template>
 
 <script>
+import Search from '../components/Search.vue';
+import CartPopup from '../components/CartPopup.vue';
+
 export default {
-    name: "AppHeader"
+    name: "AppHeader",
+    components: {
+        Search,
+        CartPopup,
+    }
 }
 </script>
 
@@ -55,7 +59,11 @@ export default {
     text-decoration: none;
 
     &:last-child {
-        margin-left: 40px;
+        margin-left: 15px;
+
+        @media (min-width: $tablet-break) {
+            margin-left: 25px;
+        }
     }
 }
 
@@ -67,10 +75,18 @@ export default {
 .header-right__item {
     text-decoration: none;
     display: none;
-    margin-left: 25px;
+    margin-left: 15px;
+
+    @media (min-width: $tablet-break) {
+        margin-left: 25px;
+    }
 
     &:first-child {
         display: block;
+
+        @media (min-width: $tablet-break) {
+            margin-left: 0;
+        }
     }
 
     &:last-child {

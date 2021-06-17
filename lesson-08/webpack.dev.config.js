@@ -1,9 +1,9 @@
 const path = require('path');
 const fs = require('fs');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
-// const htmlPages = generateHtmlPlugins('./src/public/pages');
 const CopyPlugin = require('copy-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const srcPath = './src/public';
 const destPath = path.join(__dirname, 'dist/public')
@@ -45,7 +45,21 @@ module.exports = {
             },
             {
                 test:/\.(s*)css$/,
-                use: ['style-loader', 'css-loader', 'sass-loader']
+                use: [
+                  MiniCssExtractPlugin.loader,
+                    {
+                        loader: "css-loader",
+                        options: {
+                            sourceMap: true,
+                        },
+                    },
+                    {
+                        loader: "sass-loader",
+                        options: {
+                            sourceMap: true,
+                        },
+                    }
+                ]
             },
             {
                 test: /images[\\\\/].+\.(gif|png|jpe?g|svg)$/i,
@@ -68,22 +82,10 @@ module.exports = {
                 from: srcPath + '/images', to: destPath + '/images',
             },
         ]),
+        new MiniCssExtractPlugin({
+            filename: 'css/[name].css',
+            chunkFilename: '[id].css'
+        }),
         new VueLoaderPlugin(),
     ],
 };
-
-function generateHtmlPlugins (templateDir) {
-    // Read files in template directory
-    const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir))
-    return templateFiles.map(item => {
-        // Split names and extension
-        const parts = item.split('.')
-        const name = parts[0]
-        const extension = parts[1]
-        // Create new HTMLWebpackPlugin with options
-        return new HTMLWebpackPlugin({
-            filename: `${name}.html`,
-            template: path.resolve(__dirname, `${templateDir}/${name}.${extension}`)
-        })
-    })
-}
